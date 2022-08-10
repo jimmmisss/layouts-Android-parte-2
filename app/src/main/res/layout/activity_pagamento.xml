@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/pgto_orientacao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/titulo_infor_pgto"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pgto_valor_da_compa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/valor_da_compra"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pgto_orientacao" />
+
+    <TextView
+        android:id="@+id/pgto_preco_pacote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/pgto_valor_da_compa"
+        app:layout_constraintTop_toBottomOf="@+id/pgto_valor_da_compa"
+        tools:text="R$ 421,50" />
+
+    <EditText
+        android:id="@+id/pgto_numero_cartao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:autofillHints="creditCardNumber"
+        android:hint="@string/numero_do_cartao"
+        android:inputType="number"
+        android:maxLength="12"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pgto_preco_pacote" />
+
+    <EditText
+        android:id="@+id/pgto_mes_cartao"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="creditCardExpirationMonth"
+        android:hint="@string/mm"
+        android:inputType="number"
+        android:maxLength="2"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toBottomOf="@+id/pgto_cvc_cartao"
+        app:layout_constraintStart_toStartOf="@+id/pgto_numero_cartao" />
+
+    <EditText
+        android:id="@+id/pgto_ano_cartao"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="creditCardExpirationYear"
+        android:hint="@string/aa"
+        android:inputType="number"
+        android:maxLength="2"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toBottomOf="@+id/pgto_cvc_cartao"
+        app:layout_constraintStart_toEndOf="@+id/pgto_mes_cartao" />
+
+    <EditText
+        android:id="@+id/pgto_cvc_cartao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="creditCardSecurityCode"
+        android:drawableStart="@drawable/ic_cvc_cartao_de_credito"
+        android:hint="@string/cvc"
+        android:inputType="number"
+        android:maxLength="3"
+        android:textAlignment="center"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toEndOf="@+id/pgto_numero_cartao"
+        app:layout_constraintTop_toBottomOf="@+id/pgto_numero_cartao" />
+
+    <EditText
+        android:id="@+id/pgto_nome_no_cartao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="name"
+        android:digits="@string/mascara_para_nome_no_cartao"
+        android:hint="@string/nome_no_cartao"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toEndOf="@+id/pgto_cvc_cartao"
+        app:layout_constraintStart_toStartOf="@+id/pgto_mes_cartao"
+        app:layout_constraintTop_toBottomOf="@+id/pgto_cvc_cartao" />
+
+    <Button
+        android:id="@+id/pgto_botao_finaliza_compra"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/botao_redondo_laranja"
+        android:text="@string/finaliza_compra"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/pgto_nome_no_cartao"
+        app:layout_constraintStart_toStartOf="@+id/pgto_nome_no_cartao"
+        app:layout_constraintTop_toBottomOf="@+id/pgto_nome_no_cartao" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
